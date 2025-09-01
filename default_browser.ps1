@@ -2,13 +2,13 @@
 $URLs = @(
     "https://www.youtube.com/",
     "https://calendar.google.com/calendar/u/0/r",
-    "https://www.telhai.ac.il/",
-    "https://mail.google.com/mail/u/0/#inbox"
+    "https://mail.google.com/mail/u/0/#inbox",
+    #any other URL..
 )
 
 # Path to the default browser executable (assuming Chrome or Edge)
 # You can change this to your preferred browser
-$browserPath = "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
+$browserPath = "C:\your\browse\path"
 
 # Check if the browser exists
 if (!(Test-Path $browserPath)) {
@@ -22,4 +22,5 @@ if (!(Test-Path $browserPath)) {
 $arguments = "--new-window " + ($URLs -join " ")
 
 # Start the browser with all URLs as tabs in a new window
+
 Start-Process -FilePath $browserPath -ArgumentList $arguments
